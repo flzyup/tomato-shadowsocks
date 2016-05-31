@@ -84,7 +84,7 @@ CHECK=/opt/etc
 ZONE=/opt/share/zoneinfo/Hongkong
 
 # Link
-gfw_block_list="https://raw.githubusercontent.com/koolshare/koolshare.github.io/master/maintain_files/gfwlist.conf"
+ops_list="http://entware.mirrors.ligux.com/opslist/opslist.conf"
 china_routing_list="http://entware.mirrors.ligux.com/apnic/delegated-apnic-latest"
 china_domain_list="http://entware.mirrors.ligux.com/dnsmasq-china-list/accelerated-domains.china.conf"
 china_google_list="http://entware.mirrors.ligux.com/dnsmasq-china-list/google.china.conf"
@@ -1053,7 +1053,7 @@ uptest= none;
 		
 	DNS=127.0.0.1#1054
 		
-	wget -t0 -O $PREFIX/shadowsocks/dnsmasq.d/gfwlist.conf $gfw_block_list
+	wget -t0 -O $PREFIX/shadowsocks/dnsmasq.d/gfwlist.conf $ops_list
 		
 	sed -i "s|^\(server.*\)/[^/]*$|\1/$DNS|" $PREFIX/shadowsocks/dnsmasq.d/gfwlist.conf
 	sed -i "s|^\(ipset.*\)/[^/]*$|\1/gfw_black_list|" $PREFIX/shadowsocks/dnsmasq.d/gfwlist.conf
